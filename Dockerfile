@@ -41,3 +41,5 @@ RUN echo MERGE SUBMODULES && $SCC merge -vvv $SCC_ARGS -D all \
 RUN find . -iname requirements* -exec sed -i 's/slicedimage.*/slicedimage/' {} \;
 RUN git submodule foreach $PWD/build.sh
 RUN echo TODO: bumped versions can be pushed as well
+
+ENTRYPOINT ["/src/test.sh"]
