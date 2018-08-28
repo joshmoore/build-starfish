@@ -1,0 +1,12 @@
+[submodule "slicedimage"]
+	path = slicedimage
+	url = git://github.com/spacetx/slicedimage
+	branch = master
+[submodule "sptx-format"]
+	path = sptx-format
+	url = git://github.com/spacetx/sptx-format
+	branch = master
+[submodule "starfish"]
+	path = starfish
+	url = git://github.com/spacetx/starfish
+	branch = master
