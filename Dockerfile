@@ -3,7 +3,7 @@ RUN useradd -m starfish
 USER starfish
 
 # Set up the initial conda environment
-RUN conda create -n env pip
+RUN conda create -n env python=3.6 pip
 RUN echo "source activate env" >> ~/.bashrc
 ENV PATH /home/starfish/.conda/envs/env/bin:$PATH
 env MPLBACKEND Agg
