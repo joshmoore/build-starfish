@@ -26,7 +26,7 @@ RUN echo TODO: MERGE BASE REPOSITORY && \
     echo e.g. $SCC merge --shallow $SCC_ARGS $SCC_BASE
 
 RUN git submodule sync
-RUN git submodule update --remote --recursive
+RUN git submodule update --init --remote --recursive
 RUN git submodule foreach git config user.email $(git config user.email)
 RUN git submodule foreach git config user.name $(git config user.name)
 RUN git submodule foreach git config github.user $(git config github.user)
