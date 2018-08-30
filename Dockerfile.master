@@ -1,0 +1,21 @@
+FROM continuumio/miniconda3
+RUN useradd -m starfish
+USER starfish
+
+# Set up the initial conda environment
+RUN conda create -n env python=3.6 pip
+RUN echo "source activate env" >> ~/.bashrc
+ENV PATH /home/starfish/.conda/envs/env/bin:$PATH
+env MPLBACKEND Agg
+
+# Setup test
+COPY --chown=starfish test.sh /src/test.sh
+ADD --chown=starfish https://raw.githubusercontent.com/spacetx/starfish/master/examples/get_iss_data.py /src/starfish/examples/get_iss_data.py
+WORKDIR /src
+
+# Install from pypi
+ARG SPTX_FORMAT=https://github.com/spacetx/sptx-format/archive/master.zip
+RUN pip install ${SPTX_FORMAT}
+RUN pip install https://github.com/spacetx/starfish/archive/master.zip
+
+ENTRYPOINT ["/src/test.sh"]
