@@ -19,4 +19,5 @@ RUN pip install ${SPTX_FORMAT}
 RUN pip install https://github.com/spacetx/starfish/archive/master.zip
 RUN pip install -U https://github.com/spacetx/slicedimage/archive/master.zip
 
-ENTRYPOINT ["/src/test.sh"]
+COPY --chown=starfish test2.sh /src/test2.sh
+ENTRYPOINT ["/src/test2.sh"]

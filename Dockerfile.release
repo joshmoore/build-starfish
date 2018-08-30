@@ -18,4 +18,5 @@ ARG SPTX_FORMAT=https://github.com/spacetx/sptx-format/archive/master.zip
 RUN pip install ${SPTX_FORMAT}
 RUN pip install starfish
 
-ENTRYPOINT ["/src/test.sh"]
+COPY --chown=starfish test2.sh /src/test2.sh
+ENTRYPOINT ["/src/test2.sh"]

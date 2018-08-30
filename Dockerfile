@@ -45,4 +45,4 @@ RUN find . -iname requirements* -exec sed -i 's/slicedimage.*/slicedimage/' {} \
 # Iterate over all the projects to build a consistent image
 RUN git submodule foreach $PWD/build.sh
 
-ENTRYPOINT ["/src/test.sh"]
+ENTRYPOINT ["/src/test2.sh"]
