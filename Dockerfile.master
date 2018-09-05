@@ -15,4 +15,5 @@ WORKDIR /src
 # Install from pypi
 RUN pip install https://github.com/spacetx/starfish/archive/master.zip
 
+WORKDIR /src/starfish
 ENTRYPOINT ["pytest"]

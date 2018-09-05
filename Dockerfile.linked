@@ -16,4 +16,5 @@ WORKDIR /src
 RUN pip install https://github.com/spacetx/starfish/archive/master.zip
 RUN pip install -U https://github.com/spacetx/slicedimage/archive/master.zip
 
+WORKDIR /src/starfish
 ENTRYPOINT ["pytest"]

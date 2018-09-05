@@ -44,4 +44,5 @@ RUN find . -iname requirements* -exec sed -i 's/slicedimage.*/slicedimage/' {} \
 # Iterate over all the projects to build a consistent image
 RUN git submodule foreach $PWD/build.sh
 
+WORKDIR /src/starfish
 ENTRYPOINT ["pytest"]
