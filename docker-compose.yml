@@ -4,44 +4,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.release
-    entrypoint: /src/test2.sh
-  release-fix:
-    build:
-      context: .
-      dockerfile: Dockerfile.release
-      args:
-        SPTX_FORMAT: "https://github.com/joshmoore/sptx-format/archive/setup-packages.zip"
-    entrypoint: /src/test2.sh
   master:
     build:
       context: .
       dockerfile: Dockerfile.master
-    entrypoint: /src/test2.sh
-  master-fix:
-    build:
-      context: .
-      dockerfile: Dockerfile.master
-      args:
-        SPTX_FORMAT: "https://github.com/joshmoore/sptx-format/archive/setup-packages.zip"
-    entrypoint: /src/test2.sh
   linked:
     build:
       context: .
       dockerfile: Dockerfile.linked
-      args:
-        SPTX_FORMAT: "https://github.com/joshmoore/sptx-format/archive/setup-packages.zip"
-    entrypoint: /src/test2.sh
   josh:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         SCC_ARGS: "-D none -Iuser:joshmoore"
-    entrypoint: /src/test2.sh
   all:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         SCC_ARGS: "-D all"
-    entrypoint: /src/test2.sh

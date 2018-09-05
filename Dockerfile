@@ -11,8 +11,7 @@ COPY --chown=starfish:starfish . /src
 WORKDIR /src
 
 # Install the scc tool for merging PRs
-RUN conda create -n scc python=2.7 pip && /home/starfish/.conda/envs/scc/bin/pip install \
-	https://github.com/joshmoore/snoopycrimecop/archive/has_local_changes.zip
+RUN conda create -n scc python=2.7 pip && /home/starfish/.conda/envs/scc/bin/pip install scc
 ENV SCC /home/starfish/.conda/envs/scc/bin/scc
 
 ARG SCC_BASE="master"
@@ -45,4 +44,4 @@ RUN find . -iname requirements* -exec sed -i 's/slicedimage.*/slicedimage/' {} \
 # Iterate over all the projects to build a consistent image
 RUN git submodule foreach $PWD/build.sh
 
-ENTRYPOINT ["/src/test2.sh"]
+ENTRYPOINT ["pytest"]
