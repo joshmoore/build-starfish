@@ -2,10 +2,6 @@
 	path = slicedimage
 	url = git://github.com/spacetx/slicedimage.git
 	branch = master
-[submodule "sptx-format"]
-	path = sptx-format
-	url = git://github.com/spacetx/sptx-format.git
-	branch = master
 [submodule "starfish"]
 	path = starfish
 	url = git://github.com/spacetx/starfish.git

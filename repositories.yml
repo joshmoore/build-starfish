@@ -2,7 +2,5 @@ base-branch: master
 submodules:
   slicedimage:
     base-branch: master
-  sptx-format:
-    base-branch: master
   starfish:
     base-branch: master
