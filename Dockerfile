@@ -11,7 +11,8 @@ COPY --chown=starfish:starfish . /src
 WORKDIR /src
 
 # Install the scc tool for merging PRs
-RUN conda create -n scc python=2.7 pip && /home/starfish/.conda/envs/scc/bin/pip install scc
+RUN conda create -n scc python=2.7 pip && /home/starfish/.conda/envs/scc/bin/pip install \
+       https://github.com/sbesson/snoopycrimecop/archive/scc_rate_fix.zip
 ENV SCC /home/starfish/.conda/envs/scc/bin/scc
 
 ARG SCC_BASE="master"
