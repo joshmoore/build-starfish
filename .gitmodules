@@ -6,3 +6,7 @@
 	path = starfish
 	url = git://github.com/spacetx/starfish.git
 	branch = master
+[submodule "bioformats"]
+	path = bioformats
+	url = git://github.com/openmicroscopy/bioformats.git
+	branch = develop

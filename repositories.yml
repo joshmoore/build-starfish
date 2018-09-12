@@ -4,3 +4,5 @@ submodules:
     base-branch: master
   starfish:
     base-branch: master
+  bioformats:
+    base-branch: develop
